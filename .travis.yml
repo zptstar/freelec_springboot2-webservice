@@ -13,7 +13,7 @@ cache:
 scrpit: "./gradlew clean build"
 
 before_install:
-       - chmod+x gradlew
+       - chmod +x gradlew
 before_deploy:
         - zip -r freelec_springboot2-webservice *
         - mkdir -p deploy
