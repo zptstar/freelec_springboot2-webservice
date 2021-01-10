@@ -12,16 +12,10 @@ cache:
                 - '$HOME/.gradle'
 scrpit: "./gradlew clean build"
 
-#CI 실행 완료 시 메일로 알람
-notifications:
-        email:
-                recipients:
-                        - zptstar2@hotmail.com
-
 before_deploy:
-        - zip -r freelec-springboot2-webservice *
+        - zip -r freelec_springboot2-webservice *
         - mkdir -p deploy
-        - mv freelec-springboot2-webservice.zip deploy/freelec-srpingboot2-webservice.zip
+        - mv freelec_springboot2-webservice.zip deploy/freelec_srpingboot2-webservice.zip
 
 deploy:
         - provider: s3
@@ -32,8 +26,9 @@ deploy:
           skip_cleanup: true
           acl: private # zip 파일 접근을 private으로
           local_dir: deploy # before_deploy에서 생성한 디텍토리
-          wait-until-deployed: true #CI 실행 완료 시 메일로 알람
+          wait-until-deployed: true 
 
+#CI 실행 완료 시 메일로 알
 notifications:
         email:
                 recipients:
