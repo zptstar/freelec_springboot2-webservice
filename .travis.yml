@@ -20,7 +20,7 @@ before_deploy:
 deploy:
         - provider: s3
           access_key_id : $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
-          secret_Access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
+          secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
           bucket: test01.s3.uplus.co.kr # S3 버킷
           region: ap-northeast-2
           skip_cleanup: true
